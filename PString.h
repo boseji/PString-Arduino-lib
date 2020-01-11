@@ -1,7 +1,8 @@
 /*
   PString.h - Lightweight printable string class
   Copyright (c) 2009-2012 Mikal Hart.  All right reserved.
-      @boseji - v3.0.1 - Modifications to advance Hex
+  Copyright (c) 2020 Abhijit Bose (@boseji) 
+      - v3.0.1 - Modifications to advance Hex
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
