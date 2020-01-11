@@ -16,6 +16,9 @@ begin	KEYWORD2
 capacity	KEYWORD2
 length	KEYWORD2
 format	KEYWORD2
+printHexByte	KEYWORD2
+printHexBuffer	KEYWORD2
+printHexBufferArr	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

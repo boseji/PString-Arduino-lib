@@ -6,9 +6,9 @@
 void setup()
 {
   char buffer[40];
-  Serial.begin(9600);
+  Serial.begin(115200);
   delay(2000);
-  
+
   // There are two main ways to use a PString.
   // First, the "quickie" way, simply renders a single value into a buffer
   PString(buffer, sizeof(buffer), PI); // print the value of PI into the buffer
@@ -16,7 +16,9 @@ void setup()
 
   // Other "quickie" examples:
   PString(buffer, sizeof(buffer), "Printing strings");
+  Serial.println(buffer);
   PString(buffer, sizeof(buffer), SECS);
+  Serial.println(buffer);
   PString(buffer, sizeof(buffer), SECS, HEX);
   Serial.println(buffer);
   
@@ -50,9 +52,25 @@ void setup()
   str += " world!";
   Serial.println(str);
   
-  // And you can also check for equivalance
+  // And you can also check for equivalence
   if (str == "Goodbye, cruel world!")
     Serial.println("Yes, alas, goodbye indeed");
+  
+  // Hex Byte Printing 
+  str.begin();
+  str.printHexByte(0x05);
+  Serial.println(str);
+  // Printing a Full Buffer of Hex Values
+  str.begin();
+  char bufh[4] = {0x03, 0x05, 0x00, 0x08}; // Some Buffer to be Printed
+  str.printHexBuffer(bufh,4);
+  Serial.println(str);
+  // Printing the Buffer in a Better C Array like Fashion
+  str.begin();
+  str.print('{');
+  str.printHexBufferArr(bufh, 4);
+  str.print(F(" }"));
+  Serial.println(str);
 }
 
 void loop()

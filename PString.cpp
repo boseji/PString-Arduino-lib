@@ -1,6 +1,7 @@
 /*
   PString.cpp - Lightweight printable string class
   Copyright (c) 2009-2012 Mikal Hart.  All right reserved.
+      @boseji - v3.0.1 - Modifications to advance Hex
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -57,4 +58,22 @@ int PString::format(char *str, ...)
   return ret;
 }
 
+void PString::printHexByte(uint8_t data) {
+    static const char map[]={"0123456789ABCDEF"};
+    print(map[(uint8_t)((data&0xF0)>>4)]);
+    print(map[(uint8_t)(data&0x0F)]);
+}
 
+void PString::printHexBuffer(char* buf, size_t size) {
+  for(size_t i = 0; i < size ; i++) {
+    printHexByte((uint8_t)buf[i]);
+  }
+}
+
+void PString::printHexBufferArr(char* buf, size_t size) {
+  for(size_t i = 0; i < size ; i++) {
+    print(F(" 0x"));
+    printHexByte((uint8_t)buf[i]);
+    print(',');
+  }
+}

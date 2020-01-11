@@ -1,6 +1,7 @@
 /*
   PString.h - Lightweight printable string class
   Copyright (c) 2009-2012 Mikal Hart.  All right reserved.
+      @boseji - v3.0.1 - Modifications to advance Hex
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -46,7 +47,8 @@ public:
   PString(char *buf, size_t size) : _buf(buf), _size(size)
   { begin(); }
 
-  // templated constructors allow inline renderings of this type: PString(buf, size, myfloat[, modifier]);
+  // templated constructors allow inline renderings of this type: 
+  //    PString(buf, size, myfloat[, modifier]);
   template<class T> PString(char *buf, size_t size, T arg) : _buf(buf), _size(size) 
   { begin(); print(arg); }
   
@@ -72,16 +74,28 @@ public:
   // call this to re-use an existing string
   void begin();
 
-  // This function allows assignment to an arbitrary scalar value like str = myfloat;
+  // This function allows assignment to an arbitrary scalar value like 
+  //    str = myfloat;
   template<class T> inline PString &operator =(T arg) 
   { begin(); print(arg); return *this; }
 
-  // Concatenation str += myfloat;
+  // Concatenation of any type data
+  //    str += myfloat;
   template<class T> inline PString &operator +=(T arg) 
   { print(arg); return *this; }
 
-  // Safe access to sprintf-like formatting, e.g. str.format("Hi, my name is %s and I'm %d years old", name, age);
+  // Safe access to sprintf-like formatting, 
+  // e.g. str.format("Hi, my name is %s and I'm %d years old", name, age);
   int format(char *str, ...);
+
+  // Print Hex Byte to the String
+  void printHexByte(uint8_t data);
+
+  // Print a Hex Buffer to the String
+  void printHexBuffer(char* buf, size_t size);
+
+  // Print a Hex Buffer like C Array to the String
+  void printHexBufferArr(char* buf, size_t size);
 };
 
 #endif
