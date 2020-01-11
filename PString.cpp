@@ -2,7 +2,7 @@
   PString.cpp - Lightweight printable string class
   Copyright (c) 2009-2012 Mikal Hart.  All right reserved.
   Copyright (c) 2020 Abhijit Bose (@boseji) 
-      - v3.0.1 - Modifications to advance Hex
+      - v3.0.1 - Modifications to advance Hex printing functions
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
