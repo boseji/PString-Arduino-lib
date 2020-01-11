@@ -1,5 +1,7 @@
 # Arduino PString Library
 
+[![Build Status](https://travis-ci.org/boseji/PString-Arduino-lib.svg?branch=master)](https://travis-ci.org/boseji/PString-Arduino-lib)
+
 **`PString`** *("Print-to-String")* is a new lightweight Print-derivative
 string class that renders text into a character buffer.
 With ***PStrings***, you can use the Print renderer for any device,
