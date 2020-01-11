@@ -1,0 +1,11 @@
+language: c
+sudo: false
+before_install:
+  - export ARDUINO_IDE_VERSION="1.8.9"
+  - source <(curl -SLs https://github.com/boseji/Travis-CI-arduino/raw/master/install.sh)
+script:
+  - build_main_platforms
+notifications:
+  email:
+    on_success: change
+    on_failure: change

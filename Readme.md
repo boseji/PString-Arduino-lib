@@ -139,6 +139,8 @@ Version 3 – Arduino 1.0 compatibility
 
 V3.0.1 - Modifications to advance Hex printing functions
 
+V3.0.2 - Adding CI/CD build verification
+
 ## Resource Consumption
 
 **`PString`** objects consume 8 bytes of memory during their lifetimes.
