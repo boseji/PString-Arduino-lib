@@ -1,3 +1,7 @@
+**`This repository has been superseded by more feature rich version`**:
+
+***<https://github.com/ardlib/bosejis_PString>***
+
 # Arduino PString Library
 
 [![Build Status](https://travis-ci.org/boseji/PString-Arduino-lib.svg?branch=master)](https://travis-ci.org/boseji/PString-Arduino-lib)
